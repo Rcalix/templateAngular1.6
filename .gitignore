@@ -1,0 +1,7 @@
+__data/
+node_modules/
+migrations/.migrate
+logs/*.log*
+.DS_Store
+public/
+npm-debug.log
