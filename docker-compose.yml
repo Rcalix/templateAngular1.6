@@ -1,9 +1,0 @@
-version: '2'
-services:
-    rethinkdb:
-        image: rethinkdb
-        volumes:
-            - ./__data:/data
-        ports:
-            - "9090:8080"
-            - "28015:28015"
