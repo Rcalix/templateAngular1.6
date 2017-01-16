@@ -1,3 +1,3 @@
 import 'app.js';
 
-import './directives/helloWorld';
+import './controllers/main';

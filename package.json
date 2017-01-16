@@ -7,10 +7,13 @@
     "start": "webpack-dev-server --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Sergio Díaz <seich@martianwabbit.com>",
+  "author": "Ramon Calix <ramoncalixb@gmail.com>",
   "license": "UNLICENSED",
   "dependencies": {
-    "angular": "^1.5.8",
+    "angular": "^1.6.0",
+    "angular-animate": "^1.6.1",
+    "angular-aria": "^1.6.1",
+    "angular-material": "^1.1.1",
     "angular-ui-router": "1.0.0-beta.3"
   },
   "devDependencies": {

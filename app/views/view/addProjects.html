@@ -1,0 +1,56 @@
+<md-card>
+	<md-card-header>
+          <md-card-avatar>
+            <img class="md-user-avatar" ng-src="{{addProjects.imagePath}}"/>
+          </md-card-avatar>
+          <md-card-header-text>
+            <span class="md-title">User</span>
+            <span class="md-subhead">subhead</span>
+          </md-card-header-text>
+        </md-card-header>
+     <div layout="column" layout="column" ng-cloak class="md-inline-form" >
+     <md-card-content>
+    <form name="projectForm">
+	    <md-input-container class="md-block">
+	        <label>Title</label>
+	        <input md-maxlength="15" required md-no-asterisk ng-model="addProjects.form.title" name="title">
+	        <div ng-messages="projectForm.title.$error">
+	          <div ng-message="required">This is required.</div>
+	          <div ng-message="md-maxlength">The title must be less than 30 characters long.</div>
+        	</div>
+	    </md-input-container>
+		 <md-input-container class="md-block">
+		    <label>Description</label>
+		    <input md-maxlength="100" required md-no-asterisk name="description" ng-model="addProjects.form.description">
+		    <div ng-messages="projectForm.description.$error">
+		      <div ng-message="required">This is required.</div>
+		      <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
+		    </div>
+		 </md-input-container>
+		 <md-input-container class="md-block">
+		    <label>Content</label>
+		    <input md-maxlength="500" required md-no-asterisk name="content" ng-model="addProjects.form.content">
+		    <div ng-messages="projectForm.content.$error">
+		      <div ng-message="required">This is required.</div>
+		      <div ng-message="md-maxlength">The Content must be less than 30 characters long.</div>
+		    </div>
+		 </md-input-container>
+		 <md-input-container class="md-block" flex-gt-sm>
+            <label>Type Aplication</label>
+            <md-select ng-model="addProjects.form.type">
+              <md-option ng-repeat="item in addProjects.aplicationList" value="{{item.type}}">
+                {{item.type}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <p>Tags:</p>
+		    <md-chips  ng-model="addProjects.form.tags" readonly="false">
+		        <md-chip-template>
+		          {{ $chip}}
+		        </md-chip-template>
+		   </md-chips>
+    </form>
+    </md-card-content>
+    <md-button flex="50" class="md-primary md-raised" ng-click="addProjects.saveNewProject()"  ng-disabled="addProjects.disabled" >Save</md-button>
+ </div>
+ </md-card>
