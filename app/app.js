@@ -1,29 +1,19 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import ngCookies from 'angular-cookies';
-import angularJWT from 'angular-jwt';
+import ngMaterial from 'angular-material';
 
-import 'styles/base.scss';
+const app = angular.module('app', [uiRouter, ngMaterial]);
 
-const app = angular.module('app', [uiRouter, ngCookies, angularJWT]);
-
-app.constant('endpoint', '/api');
-
-app.config(function($compileProvider) {
-	$compileProvider.debugInfoEnabled(true);
+app.config(function ($compileProvider) {
+	$compileProvider.debugInfoEnabled(true)
 });
 
 app.config(($stateProvider, $urlRouterProvider) => {
 	$urlRouterProvider.otherwise('/');
 });
 
-app.config(($httpProvider, jwtOptionsProvider) => {
-	jwtOptionsProvider.config({
-		tokenGetter: session => session.token(),
-		whiteListedDomains: ['localhost']
-	});
-
-	$httpProvider.interceptors.push('jwtInterceptor');
-});
+app.config(['$mdIconProvider', function($mdIconProvider) {
+     $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
+}]);
 
 export default app;

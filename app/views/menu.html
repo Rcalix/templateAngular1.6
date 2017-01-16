@@ -1,0 +1,30 @@
+<md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+      <md-button class="md-raised" ng-click="menu.showMenu()">Menu</md-button>
+      </div>
+ </md-toolbar>
+ <div ng-if="menu.show">
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <md-list-item class="md-2-line" ng-repeat="item in menu.listMenu">
+       <div class="md-list-item-text"> 
+        <md-button class="md-raised md-primary" ng-click=menu.navigation(item.action)>
+        {{item.name}}
+        </md-button>
+        </div>
+        <md-divider inset></md-divider>
+      </md-list-item>
+</div>
+<div ng-if="menu.listOption === 'viewProject'">
+	<view-projects></view-projects>
+</div>
+<div ng-if="menu.listOption === 'addProject'">
+	<add-projects></add-projects>
+</div>
+<div ng-if="menu.listOption === 'viewHabilities'">
+	<view-habilities></view-habilities>
+</div>
+<div ng-if="menu.listOption === 'addHabilities'">
+	<add-habilities></add-habilities>
+</div>
