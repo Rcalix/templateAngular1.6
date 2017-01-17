@@ -8,16 +8,14 @@ app.directive('menu', function () {
     bindToController: true,
     controllerAs: 'menu',
     controller: function () {
+      this.nClick = 0;
       this.show = false;
       this.listOption;
       this.listMenu = [{name: 'view projects', action: 'viewProject'}, 
                         {name: 'add projects', action: 'addProject'} ,
                         {name: 'view Habilities', action: 'viewHabilities'}, 
-                        {name: 'add Habilities', action: 'addHabilities'}]
-      this.sayHello = () => {
-        console.log('hello');
-      };
-
+                        {name: 'add Habilities', action: 'addHabilities'},
+                        {name: 'perritos', action: 'wuaff'}]
     this.showMenu = ()  => {
       if (this.show) {
         this.show = false;

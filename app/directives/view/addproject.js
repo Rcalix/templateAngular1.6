@@ -29,7 +29,7 @@ app.directive('addProjects', function () {
 
       this.resetForm();
       $scope.$watch(() => this.form, (form) => {
-			if (form.title  && form.description  && form.content  && form.title  && form.type  ) {
+			if (form.title  && form.description  && form.content  && form.type  ) {
 				this.disabled = false;
 			} else {
 				this.disabled = true;
@@ -39,6 +39,7 @@ app.directive('addProjects', function () {
 
       this.saveNewProject = () => {
       	manageProjects.setNewForm(this.form);
+        console.log(this.form)
       	this.resetForm();
       };
     }
