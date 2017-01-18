@@ -1,1 +1,20 @@
-<h1>addHabbilities</h1>
+<md-card>
+     <div layout="column" layout="column" ng-cloak class="md-inline-form" >
+     <md-card-content>
+
+    <form name="habilityform">
+    	<md-list class="listdemoListControls">
+			<md-subheader class="md-no-sticky">Check your abilities</md-subheader>
+ 			<md-list-item ng-repeat="hability in addHabilities.habilityList">
+    			<p> {{ hability.name }} </p>
+    			<md-checkbox class="md-secondary" ng-model="hability.wanted"></md-checkbox>
+  			</md-list-item>
+  		</md-list>
+  	</form>
+    <md-button flex="50" class="md-primary md-raised" ng-click="addHabilities.saveNewHability()"  ng-disabled="addHabilities.disabled" >Save</md-button>
+ </div>
+ </md-card>
+
+ <h3>
+ 	{{addHabilities.savedHability}}
+ </h3>

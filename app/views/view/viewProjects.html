@@ -1,1 +1,22 @@
-<h1>hello this is a project</h1>>
+<div ng-repeat="project in viewProjects.projects">
+  <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{project.title}}</span>
+      </md-card-title-text>
+    </md-card-title>
+      <p>{{project.description}}</p>
+    <md-card-content>
+      <p>{{project.content}}</p>
+    </md-card-content>
+    <h3>{{project.type}}</h3>
+    <md-chips ng-model="project.tags" readonly="true">
+      <md-chip-template>
+        <strong>{{$chip}}</strong>
+      </md-chip-template>
+      </md-chips>
+    <md-card-actions layout="column" layout-align="start">
+      <md-button flex="50" class="md-primary md-raised" ng-click="addProjects.saveNewProject()"  ng-disabled="addProjects.disabled" >Save</md-button>
+    </md-card-actions>
+  </md-card>
+</div>

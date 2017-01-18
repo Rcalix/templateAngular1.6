@@ -9,7 +9,12 @@ app.config(function ($stateProvider) {
   }).state('house', {
     url: '/house',
     templateProvider: function() {
-      return '<view-projects></view-projects>';
+      return '<h1>oli</h1>';
+    }
+  }).state('perritos', {
+    url: '/perro',
+    templateProvider: function() {
+      return 'wuaff';
     }
   });
 });
